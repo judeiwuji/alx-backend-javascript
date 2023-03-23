@@ -7,6 +7,6 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     signUpUser(firstName, lastName),
   ]).then((d) => d.map((r) => ({
     status: r.status,
-    value: r.value ? r.value : r.reason,
+    value: r.value ? r.value : r.reason.message,
   })));
 }
