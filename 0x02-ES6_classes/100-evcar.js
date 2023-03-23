@@ -15,6 +15,7 @@ export default class EVCar extends Car {
   }
 
   cloneCar() {
-    return new Car();
+    const Parent = super.constructor;
+    return new Parent();
   }
 }
