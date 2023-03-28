@@ -1,10 +1,13 @@
 export default function cleanSet(set, startString) {
   const cleaned = [];
+  const copy = set;
 
-  for (const item of set.values()) {
-    const str = item.substring(0, startString.length);
+  for (const [key, value] of set.entries()) {
+    const str = value.substring(0, startString.length);
     if (startString && str === startString) {
-      cleaned.push(item.substring(startString.length));
+      const sub = value.substring(startString.length);
+      cleaned.push(sub);
+      copy[key] = sub;
     }
   }
   return cleaned.join('-');
