@@ -10,5 +10,5 @@ export default function cleanSet(set, startString) {
       copy[key] = sub;
     }
   }
-  return cleaned.join('-');
+  return cleaned.join('-') + "";
 }
