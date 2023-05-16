@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-export function readDatabase(filename) {
+export default function readDatabase(filename) {
   return new Promise((resolve, reject) => {
     fs.readFile(filename, { encoding: 'utf-8' }, (err, rawData) => {
       if (err) {
@@ -30,8 +30,9 @@ export function readDatabase(filename) {
         }
       }
       const entries = Object.values(stats).map((d) => {
-        d.students = d.students.sort();
-        return d;
+        const temp = d;
+        temp.students = d.students.sort();
+        return temp;
       });
       resolve(entries);
     });
