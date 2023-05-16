@@ -29,11 +29,12 @@ export default function readDatabase(filename) {
           };
         }
       }
-      const entries = Object.values(stats).map((d) => {
-        const temp = d;
-        temp.students = d.students.sort();
-        return temp;
-      });
+      const entries = Object.values(stats);
+      // .map((d) => {
+      //   const temp = d;
+      //   temp.students = d.students.sort();
+      //   return temp;
+      // });
       resolve(entries);
     });
   });
