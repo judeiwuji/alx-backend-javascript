@@ -51,7 +51,7 @@ const app = http.createServer((req, res) => {
         res.end(`${title}\n${message}`);
       })
       .catch((error) => {
-        res.end(error);
+        res.end(error.message);
       });
   }
 });
