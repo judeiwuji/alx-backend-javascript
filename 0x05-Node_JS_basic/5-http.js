@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 
 const database = process.argv[2];
-function getStudentsCount(filename) {
+function getStudentsCount(filename = '') {
   return new Promise((resolve, reject) => {
     fs.readFile(filename, { encoding: 'utf-8' }, (err, rawData) => {
       if (err) {
