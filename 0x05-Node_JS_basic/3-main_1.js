@@ -8,3 +8,11 @@ countStudents('database.csv')
     console.log(error);
   });
 console.log('After!');
+
+countStudents('nope.csv')
+  .then(() => {
+    console.log('Done!');
+  })
+  .catch((error) => {
+    console.log(error);
+  });
