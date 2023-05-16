@@ -54,7 +54,6 @@ app.get('/students', (req, res) => {
       res.send(`${title}\n${message}`);
     })
     .catch((error) => {
-      console.log(error);
       res.send(error.message);
     });
 });
