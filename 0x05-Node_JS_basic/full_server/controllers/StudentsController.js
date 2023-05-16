@@ -1,6 +1,8 @@
 import { readDatabase } from '../utils';
 
-export class StudentsController {
+/* eslint class-methods-use-this: ["error",
+{ "exceptMethods": ["getAllStudents", "getAllStudentsByMajor"] }] */
+export default class StudentsController {
   getAllStudents(request, response) {
     readDatabase(process.argv[2])
       .then((fields) => {
