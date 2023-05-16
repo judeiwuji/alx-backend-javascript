@@ -45,13 +45,13 @@ const app = http.createServer((req, res) => {
   if (req.url === '/') {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    const title = 'This is the list of our students';
     getStudentsCount(database)
       .then((message) => {
+        const title = 'This is the list of our students';
         res.end(`${title}\n${message}`);
       })
       .catch((error) => {
-        res.end(title);
+        res.end(error);
       });
   }
 });
