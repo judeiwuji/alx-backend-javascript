@@ -1,2 +1,2 @@
 const { fork } = require('child_process');
-fork('1-stdin.js');
+const child = fork('1-stdin.js');
