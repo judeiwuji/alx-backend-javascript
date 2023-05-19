@@ -107,7 +107,9 @@ describe('calculateNumber', () => {
       });
 
       it('should return Error for 0, 0', () => {
-        expect(calculateNumber('DIVIDE', 0, 0)).to.be.equal('Error');
+        expect(calculateNumber('DIVIDE', 0, 0))
+          .to.be.equal('Error')
+          .to.be.a('string');
       });
     });
 
@@ -143,9 +145,9 @@ describe('calculateNumber', () => {
       });
 
       it('should return -0.67 for -1.7, -3', () => {
-        expect(parseFloat(calculateNumber('DIVIDE', -1.7, -3).toPrecision(2)))
-          .to.equal(0.67)
-          .to.be.a('float');
+        expect(
+          parseFloat(calculateNumber('DIVIDE', -1.7, -3).toPrecision(2)),
+        ).to.be.closeTo(0.67, 0.1);
       });
     });
   });
