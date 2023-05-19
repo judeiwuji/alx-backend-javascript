@@ -38,5 +38,13 @@ describe('calculateNumber', () => {
     it('should return 5 for 1.7, 3', () => {
       assert.equal(calculateNumber(1.7, 3), 5);
     });
+
+    it('should return 1 for -1.7, 3', () => {
+      assert.equal(calculateNumber(-1.7, 3), 1);
+    });
+
+    it('should return -5 for -1.7, -3', () => {
+      assert.equal(calculateNumber(-1.7, -3), -5);
+    });
   });
 });
