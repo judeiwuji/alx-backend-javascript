@@ -143,9 +143,9 @@ describe('calculateNumber', () => {
       });
 
       it('should return -0.67 for -1.7, -3', () => {
-        expect(
-          parseFloat(calculateNumber('DIVIDE', -1.7, -3).toPrecision(2)),
-        ).to.be.equal(0.67);
+        expect(parseFloat(calculateNumber('DIVIDE', -1.7, -3).toPrecision(2)))
+          .to.equal(0.67)
+          .to.be.a('float');
       });
     });
   });
