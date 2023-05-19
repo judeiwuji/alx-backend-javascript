@@ -33,4 +33,10 @@ describe('calculateNumber', () => {
       assert.equal(calculateNumber(-2.5, -2.3), -4);
     });
   });
+
+  describe('Integer and Floats', () => {
+    it('should return 5 for 1.7, 3', () => {
+      assert.equal(calculateNumber(1.7, 3), 5);
+    });
+  });
 });
