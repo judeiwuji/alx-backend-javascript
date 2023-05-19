@@ -2,7 +2,7 @@ const calculateNumber = require('./0-calcul');
 const assert = require('assert');
 
 describe('calculateNumber', () => {
-  describe('Integers', () => {
+  describe('Integer', () => {
     it('should return 3 for 1, 2', () => {
       assert.equal(calculateNumber(1, 2), 3);
     });
@@ -16,7 +16,7 @@ describe('calculateNumber', () => {
     });
   });
 
-  describe('Floats', () => {
+  describe('Float', () => {
     it('should return 3 for 1.0, 2.0', () => {
       assert.equal(calculateNumber(1.0, 2.0), 3);
     });
@@ -34,7 +34,7 @@ describe('calculateNumber', () => {
     });
   });
 
-  describe('Integer and Floats', () => {
+  describe('Integer and Float', () => {
     it('should return 5 for 1.7, 3', () => {
       assert.equal(calculateNumber(1.7, 3), 5);
     });
