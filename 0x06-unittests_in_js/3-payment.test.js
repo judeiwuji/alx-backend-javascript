@@ -1,5 +1,5 @@
 const sinon = require('sinon');
-const expect = require('chai').expect;
+const assert = require('assert');
 const Utils = require('./utils');
 const sendPaymentRequestToApi = require('./3-payment');
 
@@ -21,13 +21,13 @@ describe('sendPaymentRequestToApi', () => {
   it('should call calculateNumber function in Utils module', () => {
     sendPaymentRequestToApi(100, 20);
 
-    expect(Utils.calculateNumber.calledOnce).to.be.true;
-    expect(Utils.calculateNumber.calledWith('SUM', 100, 20)).to.be.true;
+    assert.equal(Utils.calculateNumber.calledOnce, true);
+    assert.equal(Utils.calculateNumber.calledWith('SUM', 100, 20), true);
   });
 
   it("should display 'The total is: 120'", () => {
     sendPaymentRequestToApi(100, 20);
 
-    expect(console.log.calledWith('The total is: 120')).to.be.true;
+    assert(console.log.calledWith('The total is: 120'), true);
   });
 });
