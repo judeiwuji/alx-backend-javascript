@@ -6,6 +6,10 @@ const sendPaymentRequestToApi = require('./3-payment');
 describe('sendPaymentRequestToApi', () => {
   const sandbox = sinon.createSandbox();
 
+  before(() => {
+    sinon.stub(console, 'log');
+  });
+
   beforeEach(() => {
     sandbox.spy(Utils);
   });
@@ -18,8 +22,12 @@ describe('sendPaymentRequestToApi', () => {
     sendPaymentRequestToApi(100, 20);
 
     expect(Utils.calculateNumber.calledOnce).to.be.true;
-    expect(Utils.calculateNumber.getCall(0).args[0]).to.equal('SUM');
-    expect(Utils.calculateNumber.getCall(0).args[1]).to.equal(100);
-    expect(Utils.calculateNumber.getCall(0).args[2]).to.equal(20);
+    expect(Utils.calculateNumber.calledWith('SUM', 100, 20)).to.be.true;
+  });
+
+  it("should display 'The total is: 120'", () => {
+    sendPaymentRequestToApi(100, 20);
+
+    expect(console.log.calledWith('The total is: 120')).to.be.true;
   });
 });
